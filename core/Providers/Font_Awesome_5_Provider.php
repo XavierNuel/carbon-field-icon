@@ -2,7 +2,7 @@
 
 namespace Carbon_Field_Icon\Providers;
 
-class Font_Awesome_Provider implements Icon_Provider_Interface {
+class Font_Awesome_5_Provider implements Icon_Provider_Interface {
 	const VERSION = '5.8.1';
 
 	/**
@@ -30,8 +30,8 @@ class Font_Awesome_Provider implements Icon_Provider_Interface {
 	 */
 	public function parse_options() {
 		$options = [];
-
-		$icons = json_decode( file_get_contents( \Carbon_Field_Icon\DIR . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'fontawesome.json' ), true );
+		
+		$icons = json_decode( file_get_contents( \Carbon_Field_Icon\DIR . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'fontawesome5.json' ), true );
 
 		foreach ( $icons as $icon ) {
 			$value = $icon['id'];
@@ -47,7 +47,7 @@ class Font_Awesome_Provider implements Icon_Provider_Interface {
 				'name'         => $icon['name'],
 				'class'        => "{$icon_class} fa-" . $icon['id'],
 				'search_terms' => $icon['search_terms'],
-				'provider'     => 'fontawesome',
+				'provider'     => 'fontawesome5',
 			);
 		}
 
