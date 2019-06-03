@@ -13,9 +13,9 @@ class Font_Awesome_Provider implements Icon_Provider_Interface {
 	 * @return void
 	 */
 	public function enqueue_assets() {
-		wp_enqueue_style(
-			'fontawesome',
-			'//use.fontawesome.com/releases/v' . static::VERSION . '/css/all.css',
+		wp_enqueue_style( 
+			'fontawesome', 
+			'https://maxcdn.bootstrapcdn.com/font-awesome/'. static::VERSION .'/css/font-awesome.min.css',
 			[],
 			static::VERSION
 		);
