@@ -5,6 +5,7 @@ use Carbon_Fields\Pimple\Container as PimpleContainer;
 use Carbon_Field_Icon\Icon_Field;
 use Carbon_Field_Icon\Providers\Dashicons_Provider;
 use Carbon_Field_Icon\Providers\Font_Awesome_Provider;
+use Carbon_Field_Icon\Providers\Font_Awesome_5_Provider;
 
 define( 'Carbon_Field_Icon\\VERSION', '3.0.0' );
 define( 'Carbon_Field_Icon\\DIR', dirname( __DIR__ ) );
