@@ -25,6 +25,10 @@ Carbon_Fields::instance()->ioc['icon_field_providers']['fontawesome'] = function
 	return new Font_Awesome_Provider();
 };
 
-Icon_Field::add_provider( [ 'fontawesome', 'dashicons' ] );
+Carbon_Fields::instance()->ioc['icon_field_providers']['fontawesome5'] = function( $container ) {
+	return new Font_Awesome_5_Provider();
+};
+
+Icon_Field::add_provider( [ 'fontawesome', 'fontawesome5', 'dashicons' ] );
 
 do_action( 'carbon_fields_icon_field_loaded' );
