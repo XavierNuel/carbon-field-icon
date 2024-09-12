@@ -5,6 +5,7 @@ use Carbon_Fields\Pimple\Container as PimpleContainer;
 use Carbon_Field_Icon\Icon_Field;
 use Carbon_Field_Icon\Providers\Dashicons_Provider;
 use Carbon_Field_Icon\Providers\Font_Awesome_Provider;
+use Carbon_Field_Icon\Providers\Font_Awesome_5_Provider;
 
 define( 'Carbon_Field_Icon\\VERSION', '3.0.0' );
 define( 'Carbon_Field_Icon\\DIR', dirname( __DIR__ ) );
@@ -25,6 +26,10 @@ Carbon_Fields::instance()->ioc['icon_field_providers']['fontawesome'] = function
 	return new Font_Awesome_Provider();
 };
 
-Icon_Field::add_provider( [ 'fontawesome', 'dashicons' ] );
+Carbon_Fields::instance()->ioc['icon_field_providers']['fontawesome5'] = function( $container ) {
+	return new Font_Awesome_5_Provider();
+};
+
+Icon_Field::add_provider( [ 'fontawesome', 'fontawesome5', 'dashicons' ] );
 
 do_action( 'carbon_fields_icon_field_loaded' );
